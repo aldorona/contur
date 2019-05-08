@@ -1,0 +1,22 @@
+      SUBROUTINE TWIXT (S,GMA,GMB,GMC,GMD,XBL,KAT,KBL)
+C     TO DETERMINE INTERPOLATION COEFFICIENTS
+      IMPLICIT REAL*8 (A-H,O-Z)
+      DIMENSION S(200)
+      DO 1 L=1,KAT
+      IF (S(KAT-L) .LT. XBL) GO TO 2
+1     CONTINUE
+2     J=KAT-L+1
+      XBB=S(J)-XBL
+      KBL=J+1
+      DU=S(J+1)-S(J)
+      DT=S(J)-S(J-1)
+      DS=S(J-1)-S(J-2) 
+      DST=DS+DT 
+      DSTU=DST+DU 
+      DTU=DT+DU 
+      GMA=-XBB*(DT-XBB)*(DU+XBB)/DS/DST/DSTU 
+      GMB=XBB*(DST-XBB)*(DU+XBB)/DS/DT/DTU 
+      GMC=(DST-XBB)*(DT-XBB)*(DU+XBB)/DST/DT/DU 
+      GMD=-XBB*(DST-XBB)*(DT-XBB)/DSTU/DTU/DU 
+      RETURN
+      END 

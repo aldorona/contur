@@ -1,0 +1,22 @@
+      SUBROUTINE SORCE (W,B)
+C     TO OBTAIN VELOCITY DERIVATIVES IN RADIAL FLOW
+      IMPLICIT REAL*8(A-H,O-Z)
+      COMMON /GG/ GAM,GM,G1,G2,G3,G4,G5,G6,G7,G8,G9,GA,RGA,QT
+      DATA ONE/1.D+0/,TWO/2.D+0/,THR/3.D+0/,FOUR/4.D+0/
+      DIMENSION B(4)
+      WW=W*W
+      AL=G7*G9
+      AWW=AL-WW
+      WW1=WW-ONE
+      AREA=(((AL-ONE)/AWW)**G1)/W
+      B(1)=AREA**QT
+      AXW=AL*WW1*B(1)
+      B(2)=W*AWW/AXW/QT
+      C2=THR/QT+AL*(TWO-ONE/QT)
+      C4=AL+ONE/QT
+      CWW=WW*(C2-WW*C4)-AL*(ONE+ONE/QT)
+      B(3)=B(2)*CWW/AXW/WW1
+      DWW=(TWO*C2-FOUR*C4*WW)/CWW-FOUR/WW1
+      B(4)=B(3)*(B(3)/B(2)+W*B(2)*DWW-ONE/B(1))
+      RETURN
+      END

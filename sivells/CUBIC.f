@@ -1,0 +1,55 @@
+      FUNCTION CUBIC (EA,EB,EC,ED)
+      IMPLICIT REAL*8(A-H,O-Z)
+C     TO OBTAIN POSITIVE REAL ROOT OF CUBIC EQUATION
+      DATA ZRO/0.D+0/,ONE/1.D+0/,TWO/2.D+0/,THR/3.D+0/
+      E3=EB/THR
+      Q1=EA*EC/THR-E3**2
+      R1=EA*(E3*EC-EA*ED)/TWO-E3**3
+      QR=Q1**3+R1**2
+      RQ=DSQRT(DABS(QR))
+      Q=DSQRT(DABS(Q1))
+      B=DSIGN(ONE,R1)
+      CBB=-ONE
+      CBC=-ONE
+      CBT1=ZRO
+      CBT2=ZRO
+      A=ZRO
+      IF (QR .GT. ZRO) GO TO 1
+      IF (QR .NE. ZRO) A=DASIN(-RQ/Q1/Q)/THR
+      CSA=DCOS(A)
+      CSNA=DSQRT(THR)*DSIN(A)
+      CBA=(TWO*B*Q*CSA-E3)/EA
+      CBB=-(B*Q*(CSA+CSNA)+E3)/EA
+      CBC=-(B*Q*(CSA-CSNA)+E3)/EA
+      GO TO 2
+1     IF (R1+RQ .NE. ZRO) CBT1=DSIGN(DEXP(DLOG(DABS(R1+RQ))/THR),R1+RQ)
+      IF (R1-RQ .NE. ZRO) CBT2=DSIGN(DEXP(DLOG(DABS(R1-RQ))/THR),R1-RQ)
+      CBA=(CBT1+CBT2-E3)/EA
+2     IA=DSIGN(ONE,CBA)
+      IB=DSIGN(ONE,CBB)
+      IC=DSIGN(ONE,CBC)
+      IF (IA+IB+IC+1) 11,3,7
+3     IF (IA .EQ. 1) GO TO 5
+      IF (IB .EQ. 1) GO TO 6
+4     CUBIC=CBC
+      RETURN
+5     CUBIC=CBA
+      RETURN
+6     CUBIC=CBB
+      RETURN
+7     IF (IA+2*IB+3*IC-2) 8,9,10
+8     IF (CBA .GT. CBB) GO TO 6
+      GO TO 5
+9     IF (CBA .GT. CBC) GO TO 4
+      GO TO 5
+10    IF (CBB .GT. CBC) GO TO 4
+      GO TO 6
+11    AA=A*9.D+1/DASIN(ONE)
+      WRITE (6,12) EA,EB,EC,ED,Q1,R1,QR,RQ,Q,AA,CBA,CBB,CBC
+      CUBIC=-ONE
+      RETURN
+C
+12    FORMAT (1HO,3HEA=E14.7,5H  EB=E14.7,5H  EC=E14.7,5H  ED=E14.7,
+     15H  Q1=E14.7,5H  R1=E14.7,5H  QR=E14.7,5H  RQ=E14.7,5H   Q=E14.7,
+     2', AA=',E14.7,',CBA=',E14.7,',CBB=',E14.7,',CBC=',E14.7 /)
+      END
