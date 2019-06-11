@@ -8,9 +8,11 @@ The code uses a combination of analytical solutions, the method of
 characteristics, and centerline distributions in order to calculate the
 divergent section of a convergent-divergent de Laval nozzle.
  
-This is a FORTRAN 77 code which runs through a series of 16 subroutines 
+master is a FORTRAN77 code which runs through a series of 16 subroutines 
 and uses 7 user-defined input cards describing the flow conditions of 
 the desired nozzle profile.
+
+conturf90 is the FORTRAN90 code version of master
 
 Sivells reports the input cards and output file of a MACH 4 
 axisymmetric nozzle. The version of the code in this repository was
@@ -64,6 +66,9 @@ Code updates:
 into the DO IV=1,IW loop.
 16May2019: AR variables ns and nc removed from AXIAL.f as not used
 16May2019: AR removed M from common block of NEO.f
+11Jun2019: AR code changed to f90. Added input2d.txt as sample input
+file to generate a two-dimensional contoured nozzle. To use rename
+input2d.txt as input.txt and rund the code
 
 -----
 end of notes
