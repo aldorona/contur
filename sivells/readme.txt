@@ -15,6 +15,14 @@ the desired nozzle profile.
 Sivells reports the input cards and output file of a MACH 4 
 axisymmetric nozzle. The version of the code in this repository was
 run in May 2019 on this test case and the same output was obtained.
+
+The "JD" parameter allows for the direct control of the nozzle geometry.
+By changing the JD parameter and the BMACH parameter in the proposed 
+input file (JD=-1 and BMACH=3.2), a planar nozzle contour will be 
+obtained. BMACH represents the Mach number at point B, which is the 
+point at which the downstream method of characteristics solution is 
+initiated. It is recommended to keep the Mach number at this point equal
+to 80% of the design Mach number (CMC parameter).
  
 The author, Luiza Florentina Zavalan, under the guide of project
 supervisor Aldo Rona, typeset Appendix D from the freely available
@@ -53,6 +61,14 @@ available from your compiler. In unix/linux, you can typeset
 "man mycompiler" to find out what flags are available.
 
 08 May 2019 - A. Rona, L.F. Zavalan
+-----
+Version 1.1 11 June 2019
 
+Fixed code typesetting errors in: 
+AXIAL,BOUND,CUBIC,MAIN,NEO,OFELD,PERFC,TRANS
+
+Successfully tested code for 2D nozzle design, added a sample input file
+for 2D design. To run the 2D nozzle design, mv input2d.txt input.txt and
+then run the code.
 -----
 end of notes
