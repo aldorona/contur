@@ -49,14 +49,20 @@ Linux/Unix users:
 Windows users:
 1. Download and install Microsoft Visual Studio
 2. Open Microsoft Visual Studio and create a new Project, suggested name: contur
-3. Move all .f files in the /src directory to the 'source' directory of the Project.
+3. Move input.txt and input2d.txt from the /src directory into the
+   'resources' directory of the Project.
+4. Move all .f files from the /src directory to the 'source' directory of the Project.
    Make sure you only move the .f files from /src, which have all small case names, do
    not add any of the .f files from the /sivells directory, which have CAPITAL CASE names,
    as this will over-define symbols in the compilation.
-4. Open the makefile with a text editor (do not double click on it) and check that your
-   list of files in 'source' tallies with the.
-4. Move input.txt and input2d.txt into the 'resources' directory of the Project
-5. 
+5. Right click on the makefile you have downloaded and open it with a text editor.
+   Do not double click on it. Check the list of files you now have in 'source' 
+   of your Project. You should only have files with root names <root>.f matching 
+   the object list root names <root>.o in makefile, e.g. axial.f -> axial.o. You should
+   also have main.f in your 'source'. You should not 
+   have any .txt, makefile, or .pdf files in your 'source'.
+6. Remove makefile. You do not need this file for compiling under Windows.
+7. Select Compile and Run from the taskbar of Microsoft Visual Studio
 
 Frequently Asked Questions
 1. You may need to let makefile know what compiler you are using. To
