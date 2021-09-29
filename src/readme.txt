@@ -1,4 +1,4 @@
-This respository contains the CONTUR code in 
+This respository contains a FORTRAN90 translation of the CONTUR code in 
 Appendix D of J.C. Sivells, A computer program for the aerodynamic
 design of axisymmetric and planar nozzles for supersonic and hypersonic
 wind tunnels, ARO Inc., a Sverdrup Corporation Company, ADEC TR 78 63,
@@ -8,39 +8,38 @@ The code uses a combination of analytical solutions, the method of
 characteristics, and centerline distributions in order to calculate the
 divergent section of a convergent-divergent de Laval nozzle.
  
-master is a FORTRAN77 code which runs through a series of 16 subroutines 
+It is a FORTRAN90 code which runs through a series of 16 subroutines 
 and uses 7 user-defined input cards describing the flow conditions of 
 the desired nozzle profile.
-
-conturf90 is the FORTRAN90 code version of master
 
 Sivells reports the input cards and output file of a MACH 4 
 axisymmetric nozzle. The version of the code in this repository was
 run in May 2019 on this test case and the same output was obtained.
  
-The author, Luiza Florentina Zavalan, under the guide of project
+Florentina-Luiza Zavalan, under the guide of project
 supervisor Aldo Rona, typeset Appendix D from the freely available
 source code listing at 
 https://apps.dtic.mil/dtic/tr/fulltext/u2/a062944.pdf
 Significant effort was put in to interpret the low-resolution scan and
 to disambigue similar typographical symbols (e.g. * from +, 5 from S).
 
+Aldo Rona translated the code in FORTRAN90.
+
 If you find any bug while testing, please report it to the authors: 
 aldo.rona@le.ac.uk, flz1@leicester.ac.uk
 
-License: This code is license-free. Code users must acknowledge the
+License: See LICENSE.txt. Code users must acknowledge the
 provenance of the listing by using the following acknowledgement in
-their published work: "This work
-used the CONTUR source code by L.F. Zavalan and A. Rona, based on the
-computer program by J.C. Sivells".
+their published work: "This work used the CONTUR source code by
+F.L. Zavalan and A. Rona, based on the computer program by J.C. Sivells".
 
 Code instructions:
 1. Create a new directory, suggested name: sivells
 2. Download in the SAME directory the bundle of 20 *.f source files,
    one input.txt file, and makefile.
 3. You are advised to also download Sivells.pdf, which is article by
-   Sivells, and data.txt, which is the sample output from the MACH 4 
-   test case.
+   Sivells, and output.txt, which is the sample output from the MACH 4 
+   test case. These files are in folder docs/.
 4. Compile the code by just typing: make. This will create the object
    files *.o and the executable MAIN.exe
 5. Run the executably MAIN.exe
