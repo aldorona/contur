@@ -44,7 +44,7 @@ Code instructions:
    one input.txt file, and makefile.
 3. You are advised to also download Sivells.pdf, which is article by
    Sivells, and output.txt, which is the sample output from the MACH 4 
-   test case. These files are in folder docs/
+   test case. These files are in folders sivells/ and docs/
 4. Compile the code by just typing: make. This will create the object
    files *.o and the executable MAIN.exe
 5. Run the executably MAIN.exe
