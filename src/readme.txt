@@ -54,7 +54,7 @@ what compiler is installed on your system.
 available from your compiler. In unix/linux, you can type
 "man mycompiler" to find out what flags are available.
 
-08 May 2019 - A. Rona, L.F. Zavalan
+08 May 2019 - A. Rona, F.L. Zavalan
 
 Card notes:
 
