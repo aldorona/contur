@@ -33,7 +33,9 @@ provenance of the listing by using the following acknowledgement in
 their published work: "This work used the CONTUR source code by
 F.L. Zavalan and A. Rona, based on the computer program by J.C. Sivells".
 
-Code instructions:
+Compilation instructions
+
+Linux/Unix users:
 1. Create a new directory, suggested name: sivells
 2. Download in the SAME directory the bundle of 20 *.f source files,
    one input.txt file, and makefile.
@@ -43,6 +45,18 @@ Code instructions:
 4. Compile the code by just typing: make. This will create the object
    files *.o and the executable MAIN.exe
 5. Run the executably MAIN.exe
+
+Windows users:
+1. Download and install Microsoft Visual Studio
+2. Open Microsoft Visual Studio and create a new Project, suggested name: contur
+3. Move all .f files in the /src directory to the 'source' directory of the Project.
+   Make sure you only move the .f files from /src, which have all small case names, do
+   not add any of the .f files from the /sivells directory, which have CAPITAL CASE names,
+   as this will over-define symbols in the compilation.
+4. Open the makefile with a text editor (do not double click on it) and check that your
+   list of files in 'source' tallies with the.
+4. Move input.txt and input2d.txt into the 'resources' directory of the Project
+5. 
 
 Frequently Asked Questions
 1. You may need to let makefile know what compiler you are using. To
