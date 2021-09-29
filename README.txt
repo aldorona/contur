@@ -31,7 +31,7 @@ to disambigue similar typographical symbols (e.g. * from +, 5 from S).
 If you find any bug while testing, please report it to the authors: 
 aldo.rona@le.ac.uk, flz1@leicester.ac.uk
 
-License: This code is license-free. Code users must acknowledge the
+License: See LICENSE.txt. Code users must acknowledge the
 provenance of the listing by using the following acknowledgement in
 their published work: "This work
 used the CONTUR source code by L.F. Zavalan and A. Rona, based on the
