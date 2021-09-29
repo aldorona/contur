@@ -60,7 +60,7 @@ what compiler is installed on your system.
 available from your compiler. In unix/linux, you can typeset
 "man mycompiler" to find out what flags are available.
 
-08 May 2019 - A. Rona, L.F. Zavalan
+08 May 2019 - A. Rona, F.L. Zavalan
 -----
 Version 1.1 11 June 2019
 
