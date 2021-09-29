@@ -20,15 +20,16 @@ Folder src contains the FORTRAN90 source code version of folder sivells
 Sivells reports the input cards and output file of a MACH 4 
 axisymmetric nozzle. The version of the code in this repository was
 run in May 2019 on this test case and the same output was obtained.
- 
-The author, Luiza Florentina Zavalan, under the guide of project
+
+Florentina-Luiza Zavalan, under the guide of project
 supervisor Aldo Rona, typeset Appendix D from the freely available
 source code listing at 
 https://apps.dtic.mil/dtic/tr/fulltext/u2/a062944.pdf
 Significant effort was put in to interpret the low-resolution scan and
 to disambigue similar typographical symbols (e.g. * from +, 5 from S).
 
-If you find any bug while testing, please report it to the authors: 
+Aldo Rona translated the code in FORTRAN90. If you find any bug
+while testing, please report it to the authors: 
 aldo.rona@le.ac.uk, flz1@leicester.ac.uk
 
 License: See LICENSE.txt. Code users must acknowledge the
@@ -42,8 +43,8 @@ Code instructions:
 2. Download in the SAME directory the bundle of 20 *.f source files,
    one input.txt file, and makefile.
 3. You are advised to also download Sivells.pdf, which is article by
-   Sivells, and data.txt, which is the sample output from the MACH 4 
-   test case.
+   Sivells, and output.txt, which is the sample output from the MACH 4 
+   test case. These files are in folder docs/
 4. Compile the code by just typing: make. This will create the object
    files *.o and the executable MAIN.exe
 5. Run the executably MAIN.exe
@@ -58,7 +59,7 @@ what compiler is installed on your system.
 available from your compiler. In unix/linux, you can type
 "man mycompiler" to find out what flags are available.
 
-08 May 2019 - A. Rona, L.F. Zavalan
+08 May 2019 - A. Rona, F.L. Zavalan
 
 Card notes:
 
