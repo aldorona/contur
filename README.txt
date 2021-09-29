@@ -38,16 +38,36 @@ their published work: "This work
 used the CONTUR source code by L.F. Zavalan and A. Rona, based on the
 computer program by J.C. Sivells".
 
-Code instructions:
+Compilation instructions
+
+Linux/Unix users:
 1. Create a new directory, suggested name: sivells
 2. Download in the SAME directory the bundle of 20 *.f source files,
    one input.txt file, and makefile.
 3. You are advised to also download Sivells.pdf, which is article by
    Sivells, and output.txt, which is the sample output from the MACH 4 
-   test case. These files are in folders sivells/ and docs/
+   test case. These files are in folders sivells/ and docs/.
 4. Compile the code by just typing: make. This will create the object
    files *.o and the executable MAIN.exe
-5. Run the executably MAIN.exe
+5. Run the executable MAIN.exe
+
+Windows users:
+1. Download and install Microsoft Visual Studio
+2. Open Microsoft Visual Studio and create a new Project, suggested name: contur
+3. Move input.txt and input2d.txt from the /src directory into the
+   'resources' directory of the Project.
+4. Move all .f files from the /src directory to the 'source' directory of the Project.
+   Make sure you only move the .f files from /src, which have all small case names, do
+   not add any of the .f files from the /sivells directory, which have CAPITAL CASE names,
+   as this will over-define symbols in the compilation.
+5. Right click on the makefile you have downloaded and open it with a text editor.
+   Do not double click on it. Check the list of files you now have in 'source' 
+   of your Project. You should only have files with root names <root>.f matching 
+   the object list root names <root>.o in makefile, e.g. axial.f -> axial.o. You should
+   also have main.f in your 'source'. You should not 
+   have any .txt, makefile, or .pdf files in your 'source'.
+6. Remove makefile. You do not need this file for compiling under Windows.
+7. Select Compile and Run from the taskbar of Microsoft Visual Studio
 
 Frequently Asked Questions
 1. You may need to let makefile know what compiler you are using. To
