@@ -24,7 +24,7 @@ point at which the downstream method of characteristics solution is
 initiated. It is recommended to keep the Mach number at this point equal
 to 80% of the design Mach number (CMC parameter).
  
-The author, Luiza Florentina Zavalan, under the guide of project
+The author, Florentina-Luiza Zavalan, under the guide of project
 supervisor Aldo Rona, typeset Appendix D from the freely available
 source code listing at 
 https://apps.dtic.mil/dtic/tr/fulltext/u2/a062944.pdf
@@ -37,7 +37,7 @@ aldo.rona@le.ac.uk, flz1@leicester.ac.uk
 License: This code is license free. Code users must acknowledge the
 provenance of the listing by using the following acknowledgement in
 their published work: "This work
-used the CONTUR source code by L.F. Zavalan and A. Rona, based on the
+used the CONTUR source code by F.L. Zavalan and A. Rona, based on the
 computer program by J.C. Sivells".
 
 Code instructions:
