@@ -6,7 +6,7 @@
       integer(kind=K4),intent(in) :: l
       integer(kind=K4) :: j,k,n
       real(kind=K8),dimension(300) :: a,b,c,d,dx,dy,g,sb,xm
-      real(kind=K8),dimension(1),intent(in) :: x,y
+      real(kind=K8),dimension(l),intent(in) :: x,y
       real(kind=K8),intent(in) :: tn2,tnl
       real(kind=K8) :: dxr,one,p,px,pxx,pxxx,q,qx,qxx,qxxx,r,s,six,sw
       real(kind=K8):: thr,xj,xk,zero
